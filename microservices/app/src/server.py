@@ -41,6 +41,13 @@ def setcookie():
 	resp.set_cookie('name', 'Nalini')
 	resp.set_cookie('age',str(10))
 	return resp 
+
+#get cokies both name and age and display them on the browser
+@app.route('/getcookies')
+def getcookie():
+	ret_name = request.cookies.get('name')
+	ret_age = request.cookies.get('age')
+	return 'Name is ' + ret_name + ' Age is ' + ret_age 
  
 
 # Uncomment to add a new URL at /new
