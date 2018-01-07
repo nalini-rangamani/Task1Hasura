@@ -1,5 +1,6 @@
 from src import app
 from flask import Flask, request
+from flask import make_response
 import requests
 # from flask import jsonify
 
@@ -33,6 +34,14 @@ def proxy_example():
 	retStr +=  author_data[j]["name"] + " " + str(Number_of_posts) + "\r\n"
 	return retStr
 
+#set cookies with my name and age
+@app.route('/setcookie')
+def setcookie():
+	resp = make_response('Setting both the cookies !!')
+	resp.set_cookie('name', 'Nalini')
+	resp.set_cookie('age',str(10))
+	return resp 
+ 
 
 # Uncomment to add a new URL at /new
 
