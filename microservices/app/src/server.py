@@ -61,6 +61,18 @@ def display_html():
 def display_image():
 	return send_file("SimpleImage.jpeg",mimetype='image/gif')
 
+#displays a textbox witha submit button
+@app.route('/input')
+def display_get_text_form():
+	return render_template('Get_text_form.html')
+
+#display the text entered by the user on stdout
+@app.route('/input', methods=['POST'])
+def display_text():
+	text = request.form['text']
+	print(text)
+	return ""
+
 # Uncomment to add a new URL at /new
 
 # @app.route("/json")
