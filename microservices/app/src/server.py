@@ -1,6 +1,7 @@
 from src import app
 from flask import Flask, request
 from flask import make_response
+from flask import render_template
 import requests
 # from flask import jsonify
 
