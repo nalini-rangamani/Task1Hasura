@@ -50,6 +50,11 @@ def getcookie():
 	return 'Name is ' + ret_name + ' Age is ' + ret_age 
  
 
+#render a html page
+@app.route('/html')
+def display_html():
+	return render_template("SimpleHtml.htm")
+
 # Uncomment to add a new URL at /new
 
 # @app.route("/json")
