@@ -1,5 +1,5 @@
 from src import app
-from flask import Flask, request
+from flask import Flask, request,send_file
 from flask import make_response
 from flask import render_template
 import requests
@@ -55,6 +55,11 @@ def getcookie():
 @app.route('/html')
 def display_html():
 	return render_template("SimpleHtml.htm")
+
+#display an image
+@app.route('/image')
+def display_image():
+	return send_file("SimpleImage.jpeg",mimetype='image/gif')
 
 # Uncomment to add a new URL at /new
 
