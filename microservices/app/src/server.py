@@ -1,5 +1,5 @@
 from src import app
-from flask import Flask, request,send_file
+from flask import Flask, request,redirect,send_file
 from flask import make_response
 from flask import render_template
 import requests
@@ -72,6 +72,12 @@ def display_text():
 	text = request.form['text']
 	print(text)
 	return ""
+
+#deny request
+@app.route('/robots.txt')
+def deny_req():
+	return redirect("http://httpbin.org/deny", code=302)
+
 
 # Uncomment to add a new URL at /new
 
