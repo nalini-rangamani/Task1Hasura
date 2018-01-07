@@ -1,4 +1,4 @@
-[2018-01-07 10:19:16 +0000] [1] [DEBUG] Current configuration:
+[2018-01-07 10:27:22 +0000] [1] [DEBUG] Current configuration:
   config: ./conf/gunicorn_config.py
   bind: ['0.0.0.0:8080']
   backlog: 2048
@@ -50,21 +50,21 @@
   default_proc_name: src:app
   pythonpath: None
   paste: None
-  on_starting: <function OnStarting.on_starting at 0x7fe2b2bc0d08>
-  on_reload: <function OnReload.on_reload at 0x7fe2b2bc0ea0>
-  when_ready: <function WhenReady.when_ready at 0x7fe2b2bc90d0>
-  pre_fork: <function Prefork.pre_fork at 0x7fe2b2bc9268>
-  post_fork: <function Postfork.post_fork at 0x7fe2b2bc9400>
-  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fe2b2bc9598>
-  worker_int: <function WorkerInt.worker_int at 0x7fe2b2bc9730>
-  worker_abort: <function WorkerAbort.worker_abort at 0x7fe2b2bc98c8>
-  pre_exec: <function PreExec.pre_exec at 0x7fe2b2bc9a60>
-  pre_request: <function PreRequest.pre_request at 0x7fe2b2bc9bf8>
-  post_request: <function PostRequest.post_request at 0x7fe2b2bc9d08>
-  child_exit: <function ChildExit.child_exit at 0x7fe2b2bc9ea0>
-  worker_exit: <function WorkerExit.worker_exit at 0x7fe2b29320d0>
-  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fe2b2932268>
-  on_exit: <function OnExit.on_exit at 0x7fe2b2932400>
+  on_starting: <function OnStarting.on_starting at 0x7f635f403d08>
+  on_reload: <function OnReload.on_reload at 0x7f635f403ea0>
+  when_ready: <function WhenReady.when_ready at 0x7f635f40c0d0>
+  pre_fork: <function Prefork.pre_fork at 0x7f635f40c268>
+  post_fork: <function Postfork.post_fork at 0x7f635f40c400>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f635f40c598>
+  worker_int: <function WorkerInt.worker_int at 0x7f635f40c730>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f635f40c8c8>
+  pre_exec: <function PreExec.pre_exec at 0x7f635f40ca60>
+  pre_request: <function PreRequest.pre_request at 0x7f635f40cbf8>
+  post_request: <function PostRequest.post_request at 0x7f635f40cd08>
+  child_exit: <function ChildExit.child_exit at 0x7f635f40cea0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f635f1750d0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f635f175268>
+  on_exit: <function OnExit.on_exit at 0x7f635f175400>
   proxy_protocol: False
   proxy_allow_ips: ['127.0.0.1']
   keyfile: None
@@ -76,18 +76,16 @@
   do_handshake_on_connect: False
   ciphers: TLSv1
   raw_paste_global_conf: []
-[2018-01-07 10:19:16 +0000] [1] [INFO] Starting gunicorn 19.7.1
-[2018-01-07 10:19:16 +0000] [1] [DEBUG] Arbiter booted
-[2018-01-07 10:19:16 +0000] [1] [INFO] Listening at: http://0.0.0.0:8080 (1)
-[2018-01-07 10:19:16 +0000] [1] [INFO] Using worker: sync
-[2018-01-07 10:19:16 +0000] [7] [INFO] Booting worker with pid: 7
-[2018-01-07 10:19:16 +0000] [8] [INFO] Booting worker with pid: 8
-[2018-01-07 10:19:17 +0000] [9] [INFO] Booting worker with pid: 9
-[2018-01-07 10:19:17 +0000] [1] [DEBUG] 3 workers
-[2018-01-07 10:21:47 +0000] [8] [DEBUG] GET /
-10.2.94.41 - - [07/Jan/2018:10:21:47 +0000] "GET / HTTP/1.0" 200 25 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36"
-[2018-01-07 10:22:00 +0000] [7] [DEBUG] GET /html
-[2018-01-07 10:22:00,603] ERROR in app: Exception on /html [GET]
+[2018-01-07 10:27:22 +0000] [1] [INFO] Starting gunicorn 19.7.1
+[2018-01-07 10:27:22 +0000] [1] [DEBUG] Arbiter booted
+[2018-01-07 10:27:22 +0000] [1] [INFO] Listening at: http://0.0.0.0:8080 (1)
+[2018-01-07 10:27:22 +0000] [1] [INFO] Using worker: sync
+[2018-01-07 10:27:22 +0000] [7] [INFO] Booting worker with pid: 7
+[2018-01-07 10:27:22 +0000] [8] [INFO] Booting worker with pid: 8
+[2018-01-07 10:27:22 +0000] [9] [INFO] Booting worker with pid: 9
+[2018-01-07 10:27:22 +0000] [1] [DEBUG] 3 workers
+[2018-01-07 10:28:39 +0000] [8] [DEBUG] GET /image
+[2018-01-07 10:28:39,403] ERROR in app: Exception on /image [GET]
 Traceback (most recent call last):
   File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1982, in wsgi_app
     response = self.full_dispatch_request()
@@ -101,7 +99,55 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/app/src/server.py", line 56, in display_html
-    return render_template("SimpleHtml.htm")
-10.2.94.41 - - [07/Jan/2018:10:22:00 +0000] "GET /html HTTP/1.0" 500 291 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36"
-NameError: name 'render_template' is not defined
+  File "/app/src/server.py", line 62, in display_image
+    return send_file("SimpleImage.jpeg",mimetype='image/gif')
+  File "/usr/local/lib/python3.6/site-packages/flask/helpers.py", line 549, in send_file
+    file = open(filename, 'rb')
+FileNotFoundError: [Errno 2] No such file or directory: '/app/src/SimpleImage.jpeg'
+10.2.94.41 - - [07/Jan/2018:10:28:39 +0000] "GET /image HTTP/1.0" 500 291 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36"
+[2018-01-07 10:29:51 +0000] [7] [DEBUG] GET /image
+[2018-01-07 10:29:51,432] ERROR in app: Exception on /image [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/app/src/server.py", line 62, in display_image
+    return send_file("SimpleImage.jpeg",mimetype='image/gif')
+  File "/usr/local/lib/python3.6/site-packages/flask/helpers.py", line 549, in send_file
+    file = open(filename, 'rb')
+FileNotFoundError: [Errno 2] No such file or directory: '/app/src/SimpleImage.jpeg'
+10.2.94.41 - - [07/Jan/2018:10:29:51 +0000] "GET /image HTTP/1.0" 500 291 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36"
+[2018-01-07 10:29:56 +0000] [9] [DEBUG] GET /.git/config
+10.2.94.41 - - [07/Jan/2018:10:29:56 +0000] "GET /.git/config HTTP/1.0" 404 233 "http://app.carrier19.hasura-app.io/.git/config" "Go-http-client/1.1"
+[2018-01-07 10:29:58 +0000] [8] [DEBUG] GET /html
+10.2.94.41 - - [07/Jan/2018:10:29:58 +0000] "GET /html HTTP/1.0" 200 161 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36"
+[2018-01-07 10:30:06 +0000] [9] [DEBUG] GET /image
+[2018-01-07 10:30:06,612] ERROR in app: Exception on /image [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/app/src/server.py", line 62, in display_image
+    return send_file("SimpleImage.jpeg",mimetype='image/gif')
+  File "/usr/local/lib/python3.6/site-packages/flask/helpers.py", line 549, in send_file
+    file = open(filename, 'rb')
+FileNotFoundError: [Errno 2] No such file or directory: '/app/src/SimpleImage.jpeg'
+10.2.94.41 - - [07/Jan/2018:10:30:06 +0000] "GET /image HTTP/1.0" 500 291 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36"
